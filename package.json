@@ -8,7 +8,13 @@
     "lint": "eslint . --ext .ts",
     "build": "tsc",
     "dev": "node --env-file=.env --import=tsx --watch ./src/index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "zad1": "node --env-file=.env --import=tsx --watch ./zadaci/zad1.ts",
+    "zad2": "node --env-file=.env --import=tsx --watch ./zadaci/zad2.ts",
+    "zad3": "node --env-file=.env --import=tsx --watch ./zadaci/zad3.ts",
+    "zad4": "node --env-file=.env --import=tsx --watch ./zadaci/zad4.ts",
+    "zad5": "node --env-file=.env --import=tsx --watch ./zadaci/zad5.ts",
+    "zad6": "node --env-file=.env --import=tsx --watch ./zadaci/zad6.ts"
   },
   "author": "",
   "license": "ISC",
