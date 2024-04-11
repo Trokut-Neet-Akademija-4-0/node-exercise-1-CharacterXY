@@ -3,7 +3,7 @@ import userService from '../services/userService'
 
 const router = express.Router()
 
-router.get('/users', (req: Request, res: Response) => {
+router.get('', (req: Request, res: Response) => {
   const users = userService.getAllUsers()
   res.send(users)
 })
