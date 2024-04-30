@@ -8,8 +8,14 @@ class Student extends Osoba {
   ) {
     super(ime, dob)
   }
+
+  kloniraj(): Student {
+    return new Student(this._ime, this.dob, this.brojIndeksa)
+  }
 }
 
-console.log(new Student('blabla', 55, 123))
+const student1 = new Student('blabla', 55, 123)
+const student2 = student1.kloniraj()
+console.log(student2)
 
 export default Student

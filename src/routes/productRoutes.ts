@@ -1,16 +1,17 @@
 import express, { Request, Response } from 'express'
 import productService from '../services/productService'
+import { createProduct } from '../controllers/productController'
 
 const router = express.Router()
 
-router.get('', (req: Request, res: Response) => {
-  const product = productService.getAllProducts()
+router.get('', async (req: Request, res: Response) => {
+  const product = await productService.getAllProducts()
   res.send(product)
 })
 
-router.get('/:id', (req: Request, res: Response) => {
+router.get('/:id', async (req: Request, res: Response) => {
   const productId = +req.params.id
-  const product = productService.getProductById(productId)
+  const product = await productService.getProductById(productId)
   if (product) {
     res.send(product)
   } else {
@@ -18,10 +19,12 @@ router.get('/:id', (req: Request, res: Response) => {
   }
 })
 
-router.get('/delete/:id', (req: Request, res: Response) => {
+router.get('/delete/:id', async (req: Request, res: Response) => {
   const productId = +req.params.id
-  const deletedProduct = productService.deleteProductById(productId)
+  const deletedProduct = await productService.deleteProductById(productId)
   res.send(deletedProduct)
 })
+
+router.post('/', createProduct)
 
 export default router
